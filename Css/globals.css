@@ -13,6 +13,7 @@
 
 :root {
     --background: rgb(17, 17, 17);
+    --textcolor: rgb(180, 180, 180);
     --lightwhite: rgb(255, 255, 255);
     --hovercolor: rgb(255, 178, 34);
     --lightborder: rgb(234, 234, 234);
@@ -30,6 +31,7 @@ body, html, #root {
     height: 100%;
     width: 100%;
     background-color: var(--background);
+    color: var(--textcolor);
     font-size: 16px;
     display: flex;
     flex-direction: column;
