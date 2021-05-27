@@ -6,9 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Les 4</title>
     <link rel="stylesheet" href="globals.css">
-    <script src="script.js" type="module"></script>
+    <script src="main.js" type="module" defer></script>
 </head>
 <body>
-
+    <nav id="navigation"></nav>
+    <div id="container">
+        <div id="opgaveblad">
+            <div id="opgave"></div>
+        </div>
+        <div id="antwoordenblad">
+            <input type="text" id='answerInput'>
+            <input type="button" value="enter" id="execButton">
+        </div>
+        <div id="alertContainer"></div>
+    </div>
 </body>
 </html>
