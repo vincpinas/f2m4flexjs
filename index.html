@@ -5,10 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="JavaScript/main.js" type="module"></script>
-    <link rel="stylesheet" href="Css/globals.css">
+    <link rel="stylesheet" href="globals.css">
 </head>
-<body>
+
     <h1>Mijn Pagina</h1>
     <p class="achtergrond" style="margin:10px;">achtergrond groen</p>
     <p class="achtergrond" style="margin:10px;">achtergrond blauw</p>
@@ -16,5 +15,48 @@
     <p class="voorgrond" style="margin:10px;">voorgrond oranje</p>
     <p class="voorgrond" style="margin:10px;">voorgrond geel</p>
     <p class="voorgrond" style="margin:10px;">voorgrond zwart</p>
+
+    <input type="button" id="resetButton" value="reset">
+
+    <script>
+    let achtergronden = document.getElementsByClassName('achtergrond');
+    let voorgronden = document.getElementsByClassName('voorgrond');
+    let achtergrondkleuren = ['green', 'blue', 'white'];
+    let voorgrondkleuren = ['orange', 'yellow', 'black'];
+    let titles = ['how', 'much', 'moon', 'blues', 'heart', 'found me', 'over', 'reaction', 'heart', 'phasing', 'colors', 'rain', 'cooler'];
+    let resetButton = document.getElementById('resetButton');
+
+    for(let i = 0; i < achtergronden.length; i++) {
+        achtergronden[i].addEventListener('click', () => {
+            setAchtergrond(i)
+        });
+    }
+
+    const setAchtergrond = (i) => {
+        console.log(i)
+        document.body.style.background = achtergrondkleuren[i];
+    }
+
+    for(let i = 0; i < voorgronden.length; i++) {
+        voorgronden[i].addEventListener('click', () => {
+            setVoorgrond(i)
+        });
+    }
+
+    const setVoorgrond = (i) => {
+        console.log(i)
+        document.body.style.color = voorgrondkleuren[i];
+        document.title = choose(titles)
+    }
+
+    resetButton.addEventListener('click', () => {
+        document.body.style = ''
+    })
+
+    function choose(data) {
+        let index = Math.floor(Math.random() * data.length);
+        return data[index]
+    }
+    </script>
 </body>
 </html>

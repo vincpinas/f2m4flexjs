@@ -19,4 +19,4 @@
 
 * *__Live Version: [FlexJs]__*
 
-[FlexJS]: http://30472.hosts1.ma-cloud.nl/f2m4flexjs/
+[FlexJS]: http://30472.hosts1.ma-cloud.nl/f2m4flexjs
