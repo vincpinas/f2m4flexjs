@@ -35,6 +35,8 @@ body, html, #root {
     font-size: 16px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /* CSS Reset */
@@ -47,3 +49,43 @@ blockquote, q {quotes: none;}
 blockquote:before, blockquote:after,
 q:before, q:after {content: ''; content: none;}
 table {border-collapse: collapse; border-spacing: 0;}
+
+#blockGrid {
+    margin: 23px;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    width: 27rem;
+    height: 27rem;
+    gap: 3px;
+}
+
+.block-item {
+    transition: .2s;
+    display:inline-block;
+}
+
+.block-item:hover {
+    color: #6961ff;
+}
+
+@keyframes rubberBand{
+    0%{
+        transform: scale3d(1,1,1);
+    }
+    35%{
+        transform: scale3d(1.25,.75,1);
+    }
+    45%{
+        transform: scale3d(.75,1,1);
+    }
+    60%{
+        transform: scale3d(1.2,.8,1);
+    }
+    75%{
+        transform: scale3d(1.05,.95,1);
+    }
+    100%{
+        transform: scale3d(1,1,1); 
+    }
+}

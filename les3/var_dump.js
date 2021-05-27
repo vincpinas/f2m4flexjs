@@ -1,0 +1,1 @@
+export let blockGrid = document.getElementById('blockGrid');

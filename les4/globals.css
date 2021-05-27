@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+
+*, *::before, *::after {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+:root {
+    --background: rgb(17, 17, 17);
+    --textcolor: rgb(180, 180, 180);
+    --lightwhite: rgb(255, 255, 255);
+    --hovercolor: rgb(255, 178, 34);
+    --lightborder: rgb(234, 234, 234);
+    --darkerborder: rgb(224, 224, 224);
+    --lightgray: rgb(173, 173, 173);
+}
+
+a, button, input[type="submit"] {
+    text-decoration: none;
+    color: var(--textcolor);
+}
+
+body, html, #root {
+    overflow-x: hidden;
+    height: 100%;
+    width: 100%;
+    background-color: var(--background);
+    color: var(--textcolor);
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* CSS Reset */
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {display: block;}
+body {line-height: 1;}
+ol, ul {list-style: none;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after,
+q:before, q:after {content: ''; content: none;}
+table {border-collapse: collapse; border-spacing: 0;}

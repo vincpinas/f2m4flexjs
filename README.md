@@ -17,6 +17,10 @@
 
 ### Useful Links.
 
-* *__Live Version: [FlexJs]__*
+* *__Live Version: [les2]__*
+* *__Live Version: [les3]__*
+* *__Live Version: [les4]__*
 
-[FlexJS]: http://30472.hosts1.ma-cloud.nl/f2m4flexjs
+[les2]: http://30472.hosts1.ma-cloud.nl/f2m4flexjs/les2
+[les3]: http://30472.hosts1.ma-cloud.nl/f2m4flexjs/les3
+[les4]: http://30472.hosts1.ma-cloud.nl/f2m4flexjs/les4
