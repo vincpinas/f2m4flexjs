@@ -2,8 +2,6 @@ import init from './init.js';
 import * as vars from './var_dump.js';
 let sum;
 
-init();
-
 const checkActiveTables = () => {
     vars.activeTables.splice(0, vars.activeTables.length)
 
@@ -34,15 +32,18 @@ const createAlert = (type) => {
     if(type === 'right') {
         alertHeader.style.background = 'rgb(26, 202, 70)'
         alert.innerHTML = "Good job, that's the right answer!"
-    } else {
+    } else if (type === 'false') {
         alertHeader.style.background = 'rgb(202, 26, 26)'
         alert.innerHTML = "Oops, looks like that's wrong :("
+    } else if (type === 'noInput') {
+        alertHeader.style.background = 'orange'
+        alert.innerHTML = "Please fill in a answer before submitting."
     }
 
     alert.appendChild(alertHeader)
     vars.alertContainer.appendChild(alert)
 
-    setTimeout(() => {
+    return setTimeout(() => {
        vars.alertContainer.removeChild(vars.alertContainer.firstChild)
     }, 1400)
 }
@@ -53,7 +54,7 @@ const createAssignment = (activeTables) => {
 
     sum = numbers.multiplier * numbers.table;
 
-    vars.opgave.innerHTML = `${numbers.multiplier} x ${numbers.table}`
+    return vars.opgave.innerHTML = `${numbers.multiplier} x ${numbers.table}`
 }
 
 const checkAnswer = () => {
@@ -61,22 +62,25 @@ const checkAnswer = () => {
         vars.playerScore.right += 1
         createAlert('right')
         setTimeout(createAssignment(vars.activeTables), 500)
+    } else if (vars.answerInput.value == (null||undefined||'')) {
+        createAlert('noInput')
     } else {
         vars.playerScore.wrong += 1
         createAlert('false')
     }
 
-    vars.answerInput.value = ''
+    return vars.answerInput.value = ''
 }
 
 const main = () => {
-    vars.checkBoxes.map(item => {
-        item.addEventListener('change', checkActiveTables)
-    })
-    checkActiveTables();
+    init();
 
     vars.execButton.addEventListener('click', checkAnswer);
+    vars.checkBoxes.map(item => {
+        item.addEventListener('change', checkActiveTables)
+    });
 
+    checkActiveTables();
     createAssignment(vars.activeTables);
 }
 
