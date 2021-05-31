@@ -15,7 +15,8 @@ const checkActiveTables = () => {
         vars.activeTables.push(vars.tables[0])
     }
 
-    return vars.activeTables;
+    createAlert('reset')
+    return createAssignment(vars.activeTables);
 }
 
 const choose = (data) => {
@@ -38,6 +39,9 @@ const createAlert = (type) => {
     } else if (type === 'noInput') {
         alertHeader.style.background = 'orange'
         alert.innerHTML = "Please fill in a answer before submitting."
+    } else if (type === 'reset') {
+        alertHeader.style.background = 'orange'
+        alert.innerHTML = "Please wait, creating a new assignment."
     }
 
     alert.appendChild(alertHeader)
@@ -45,7 +49,7 @@ const createAlert = (type) => {
 
     return setTimeout(() => {
        vars.alertContainer.removeChild(vars.alertContainer.firstChild)
-    }, 1400)
+    }, 2500)
 }
 
 const createAssignment = (activeTables) => {
