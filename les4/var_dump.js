@@ -19,8 +19,9 @@ export let tafelV7 = [];
 export let tafelV8 = [];
 export let tafelV9 = [];
 export let tafelV10 = [];
+export let tafelV11 = [];
 
 export const tables = [
   tafelV1, tafelV2, tafelV3, tafelV4, tafelV5,
-  tafelV6, tafelV7, tafelV8, tafelV9, tafelV10
+  tafelV6, tafelV7, tafelV8, tafelV9, tafelV10, tafelV11
 ]

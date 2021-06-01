@@ -11,11 +11,15 @@ const checkActiveTables = () => {
         }
     })
 
-    if(vars.activeTables.length < 1) {
-        vars.activeTables.push(vars.tables[0])
+    if(vars.activeTables.length >= 1) {
+        createAlert('reset')
     }
 
-    createAlert('reset')
+    if(vars.activeTables.length < 1) {
+        vars.activeTables.push(vars.tables[10]);
+        createAlert('easter_egg')
+    }
+
     return createAssignment(vars.activeTables);
 }
 
@@ -42,6 +46,9 @@ const createAlert = (type) => {
     } else if (type === 'reset') {
         alertHeader.style.background = 'orange'
         alert.innerHTML = "Please wait, creating a new assignment."
+    } else if (type === 'easter_egg') {
+        alertHeader.style.background = 'rgb(26, 202, 70)'
+        alert.innerHTML = "Congratulations, you found the hidden easter egg! a extra table of 11."
     }
 
     alert.appendChild(alertHeader)

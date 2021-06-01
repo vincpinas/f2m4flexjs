@@ -36,6 +36,7 @@ const init = () => {
         vars.tafelV8.push({multiplier: i, table: 8})
         vars.tafelV9.push({multiplier: i, table: 9})
         vars.tafelV10.push({multiplier: i, table: 10})
+        vars.tafelV11.push({multiplier: i, table: 11})
     }
 }
 
