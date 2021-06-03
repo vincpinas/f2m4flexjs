@@ -38,6 +38,11 @@ const init = () => {
         vars.tafelV10.push({multiplier: i, table: 10})
         vars.tafelV11.push({multiplier: i, table: 11})
     }
+
+    vars.scoreBoard.innerHTML = `
+        <span>Correct: ${vars.playerScore.right}</span>
+        <span>Wrong: ${vars.playerScore.wrong}</span>
+    `
 }
 
 export default init;

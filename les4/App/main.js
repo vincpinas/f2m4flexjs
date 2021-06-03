@@ -80,6 +80,10 @@ const checkAnswer = () => {
         createAlert('false')
     }
 
+    vars.scoreBoard.innerHTML = `
+        <span>Correct: ${vars.playerScore.right}</span>
+        <span>Wrong: ${vars.playerScore.wrong}</span>
+    `
     return vars.answerInput.value = ''
 }
 

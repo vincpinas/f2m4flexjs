@@ -13,6 +13,7 @@
 
 :root {
     --background: rgb(27, 27, 27);
+    --lighterbackground: rgb(14, 14, 14);
     --textcolor: rgb(180, 180, 180);
     --lightwhite: rgb(255, 255, 255);
     --hovercolor: rgb(255, 178, 34);
@@ -28,6 +29,7 @@ a, button, input[type="submit"] {
 
 body, html, #root {
     overflow-x: hidden;
+    position: relative;
     height: 100%;
     width: 100%;
     background-color: var(--background);
@@ -51,7 +53,7 @@ table {border-collapse: collapse; border-spacing: 0;}
 
 #navigation {
     background-color: rgb(24, 24, 24);
-    border-bottom: 2px solid rgb(0, 0, 0);
+    border-bottom: 2px solid rgb(22, 22, 22);
     width: 100%;
     padding: 1rem;
 }
@@ -127,6 +129,20 @@ table {border-collapse: collapse; border-spacing: 0;}
     border-radius: 10px 10px 0px 0px;
     width: 100%;
     padding: 3px;
+}
+
+#scoreboard {
+    background: var(--lighterbackground);
+    width: 10%;
+    padding: 30px 20px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 10px 0 0;
 }
 
 @keyframes fade-out {

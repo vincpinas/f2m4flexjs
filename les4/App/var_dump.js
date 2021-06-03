@@ -3,6 +3,7 @@ export const opgave = document.getElementById('opgave');
 export const execButton = document.getElementById('execButton');
 export const answerInput = document.getElementById('answerInput');
 export const alertContainer = document.getElementById('alertContainer');
+export const scoreBoard = document.getElementById('scoreboard');
 
 export const playerScore = { right: 0, wrong: 0};
 export const checkBoxes = [];
