@@ -4,19 +4,18 @@ class ScoreHandler
 {
     public $username;
     public $score;
-    public $date;
+    public $created_at;
 
-    public function __construct($username,$score) {
-        $this->username = $username;
-        $this->score = $score;
+    public function __construct($connection) {
+        $this->connection = $connection;
         $this->created_at = date("Y/m/d");
     }
     
-    public function sendScoreData($connection) {
+    public function sendScoreData($username, $score) {
         $insert_query = "INSERT INTO `scores` (`username`, `score`, `created_at`)
                          VALUES(:username,:score,:created_at)";
 
-        $insert_stmt = $connection->prepare($insert_query);
+        $insert_stmt = $this->connection->prepare($insert_query);
 
         $insert_stmt->bindValue(':username', htmlspecialchars(strip_tags($this->username)),PDO::PARAM_STR);
         $insert_stmt->bindValue(':score', $this->score,PDO::PARAM_STR);
@@ -25,10 +24,10 @@ class ScoreHandler
         $insert_stmt->execute();
     }
 
-    public function fetchAllScores($connection) {
+    public function fetchAllScores() {
         $fetch_query = "SELECT * FROM `scores`";
 
-        $fetch_stmt = $connection->prepare($fetch_query);
+        $fetch_stmt = $this->connection->prepare($fetch_query);
         $fetch_stmt->execute();
 
         $result = $fetch_stmt->fetchAll(PDO::FETCH_ASSOC);

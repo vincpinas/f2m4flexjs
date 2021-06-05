@@ -32,9 +32,9 @@ if($_SERVER["REQUEST_METHOD"] != "POST") {
         $username = trim($_POST['username']);
         $userscore = trim($_POST['userscore']);
     
-        $score = new ScoreHandler($username,$userscore);
+        $score = new ScoreHandler($conn);
     
-        $score->sendScoreData($conn);
+        $score->sendScoreData($username,$userscore);
     } catch(PDOException $e) {
         $returnData = msg(0,500,$e->getMessage(), 'Error');
         echo json_encode($returnData);

@@ -29,9 +29,9 @@ if($_SERVER["REQUEST_METHOD"] != "POST") {
     echo json_encode($returnData);
 } else {
     try {
-        $score = new ScoreHandler("vincent",2);
+        $score = new ScoreHandler($conn);
 
-        $score->fetchAllScores($conn);
+        $score->fetchAllScores();
     } catch(PDOException $e) {
         $returnData = msg(0,500,$e->getMessage(), 'Error');
         echo json_encode($returnData);
