@@ -7,7 +7,7 @@ class Env {
         'db_host_local' => 'localhost',
         'db_user_local' => 'root',
         'db_password_local' => '',
-        'db_name_local' => 'manga.ly',
+        'db_name_local' => 'rekenen',
 
         'db_host_prod' => '127.0.0.1',
         'db_user_prod' => '',

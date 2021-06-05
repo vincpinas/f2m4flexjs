@@ -26,8 +26,17 @@ $returnData = [];
 
 if($_SERVER["REQUEST_METHOD"] != "POST") {
     $returnData = msg(0,404,'Page Not Found!','Error');
+    echo json_encode($returnData);
 } else {
-
+    try {
+        $username = trim($_POST['username']);
+        $userscore = trim($_POST['userscore']);
+    
+        $score = new ScoreHandler($username,$userscore);
+    
+        $score->sendScoreData($conn);
+    } catch(PDOException $e) {
+        $returnData = msg(0,500,$e->getMessage(), 'Error');
+        echo json_encode($returnData);
+    }
 }
-
-echo json_encode($returnData);
