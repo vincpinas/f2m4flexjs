@@ -90,7 +90,6 @@ const checkAnswer = () => {
 const main = () => {
     init();
 
-    vars.execButton.addEventListener('click', checkAnswer);
     document.addEventListener('keydown', (event) => {
         event.keyCode === 13 ? checkAnswer() : null
     })
